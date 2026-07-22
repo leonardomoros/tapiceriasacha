@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../lib/site';
+---
+
+<Layout
+  title="Políticas de Privacidad — Tapicería Sacha"
+  description="Política de tratamiento de datos personales de Tapicería Sacha, conforme a la Ley 1581 de 2012 de Colombia."
+>
+  <section class="py-16 md:py-24 bg-[var(--surface)]">
+    <div class="container-app max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--primary)] mb-3">Legal</p>
+      <h1 class="font-heading text-4xl md:text-5xl font-semibold mb-8">Políticas de Privacidad</h1>
+
+      {/* TODO: reemplazar con el texto legal definitivo revisado por el cliente/abogado. Borrador basado en la Ley 1581 de 2012 (Habeas Data) de Colombia. */}
+      <div class="prose prose-neutral max-w-none text-[var(--muted)] leading-relaxed space-y-6">
+        <p>
+          En Tapicería Sacha, con domicilio en {site.address}, nos comprometemos a proteger la privacidad
+          y los datos personales de nuestros clientes y visitantes, de conformidad con la Ley 1581 de 2012
+          y el Decreto 1377 de 2013 de la República de Colombia.
+        </p>
+
+        <h2 class="font-heading text-xl font-semibold text-[var(--text)]">Datos que recopilamos</h2>
+        <p>
+          A través de nuestro formulario de contacto y canales de WhatsApp podemos recopilar tu nombre,
+          número de teléfono y la información que nos compartas sobre tu proyecto, únicamente con el fin
+          de brindarte asesoría y cotización sobre nuestros servicios de tapicería.
+        </p>
+
+        <h2 class="font-heading text-xl font-semibold text-[var(--text)]">Uso de la información</h2>
+        <p>
+          Usamos tus datos exclusivamente para contactarte, dar seguimiento a tu solicitud y mejorar
+          nuestra atención. No vendemos ni compartimos tu información con terceros para fines comerciales
+          ajenos a Tapicería Sacha.
+        </p>
+
+        <h2 class="font-heading text-xl font-semibold text-[var(--text)]">Tus derechos</h2>
+        <p>
+          Como titular de tus datos personales, tienes derecho a conocer, actualizar, rectificar y
+          solicitar la eliminación de tu información en cualquier momento, escribiéndonos a través de
+          nuestros canales de contacto.
+        </p>
+
+        <h2 class="font-heading text-xl font-semibold text-[var(--text)]">Contacto</h2>
+        <p>
+          Si tienes preguntas sobre esta política, puedes escribirnos al {site.phoneDisplay} o visitarnos
+          en {site.address}.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

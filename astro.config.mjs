@@ -6,7 +6,11 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.tapiceriasacha.com',
+  // Non-www is the canonical domain that actually ranks today (see GSC data:
+  // the www/http variant is an indexed duplicate splitting authority — do not
+  // switch this back without fixing that redirect first).
+  site: 'https://tapiceriasacha.com',
+  trailingSlash: 'always',
   adapter: vercel(),
   integrations: [sitemap()],
   vite: {

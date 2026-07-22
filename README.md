@@ -1,43 +1,48 @@
-# Astro Starter Kit: Minimal
+# Tapicería Sacha
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Sitio web de Tapicería Sacha (Medellín), construido con Astro + Tailwind v4.
+Reemplaza al sitio actual en WordPress (`tapiceriasacha.com`), preservando la
+autoridad SEO acumulada durante años.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Comandos
 
-## 🚀 Project Structure
+| Comando           | Acción                                  |
+| :---------------- | :--------------------------------------- |
+| `npm install`      | Instala dependencias                     |
+| `npm run dev`      | Servidor local en `localhost:4321`       |
+| `npm run build`    | Build de producción a `./dist/`          |
+| `npm run preview`  | Preview del build local                  |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Checklist antes de conectar el dominio de producción
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+El sitio actual tiene ~16 meses de posicionamiento orgánico real (ver GSC). Antes
+de apuntar `tapiceriasacha.com` a este proyecto:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- [ ] **Redirect www → apex + http → https.** El sitio actual tiene
+      `http://www.tapiceriasacha.com/` indexado como página duplicada de la home
+      (52 clics/mes, posición propia 4.9), partiendo la autoridad de la home.
+      Configurar en Vercel (Domains) que `www` redirija 301 a `tapiceriasacha.com`
+      (sin www) y forzar HTTPS, no dejarlo como dos dominios activos.
+- [ ] **Verificar que no queden URLs 404.** Las rutas ya están alineadas a las
+      del WordPress actual: `/`, `/servicios/`, `/textiles/`, `/nosotros/`,
+      `/galeria/`, `/contacto/`, `/politicas-de-privacidad/` (todas con `/`
+      final — `trailingSlash: 'always'` en `astro.config.mjs`).
+- [ ] **Enviar el nuevo sitemap a Search Console** (`/sitemap-index.xml`,
+      generado por `@astrojs/sitemap`) apenas se haga el cutover.
+- [ ] **Monitorear Performance en GSC semanalmente** las primeras 4-8 semanas
+      post-lanzamiento, filtrando por las queries que ya sabemos que importan
+      (ver abajo).
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Queries que sostienen el ranking actual (no perder estas keywords)
 
-Any static assets, like images, can be placed in the `public/` directory.
+Del export real de Search Console (16 meses), en orden de clics:
 
-## 🧞 Commands
+`tapiceria medellin` · `tapizado de muebles` · `tapizar muebles medellin` ·
+`tapizado de muebles a domicilio medellín` · `tapizar muebles` ·
+`tapicerias en medellin` · `forrado de muebles` · `tapicería de muebles cerca
+de mi ubicación`
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+`/textiles/` es la página con mejor posición promedio de todo el sitio (9.8) —
+cualquier cambio futuro a esa página debe hacerse con más cuidado que las demás.
+`/nosotros/` es la más débil (posición 24) — es la que menos riesgo tiene si se
+necesita reescribir a fondo.

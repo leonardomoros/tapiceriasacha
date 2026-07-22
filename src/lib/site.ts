@@ -12,9 +12,9 @@ export const site = {
 
 export const nav = [
   { label: 'Inicio', href: '/' },
-  { label: 'Servicios', href: '/servicios' },
-  { label: 'Galería', href: '/galeria' },
-  { label: 'Catálogo', href: '/productos' },
-  { label: 'Nosotros', href: '/somos' },
-  { label: 'Contacto', href: '/contacto' },
+  { label: 'Servicios', href: '/servicios/' },
+  { label: 'Galería', href: '/galeria/' },
+  { label: 'Textiles', href: '/textiles/' },
+  { label: 'Nosotros', href: '/nosotros/' },
+  { label: 'Contacto', href: '/contacto/' },
 ];
