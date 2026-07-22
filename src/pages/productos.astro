@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../lib/site';
+
+const specs = [
+  { title: 'Retardancia al fuego', desc: 'Telas certificadas para mayor seguridad en tu hogar.' },
+  { title: 'Alta durabilidad', desc: 'Materiales resistentes al uso diario y al desgaste.' },
+  { title: 'Apariencia de lino', desc: 'Texturas elegantes que se adaptan a cualquier ambiente.' },
+  { title: 'Tendencia mundial', desc: 'Diseños y colores alineados con las últimas tendencias.' },
+  { title: 'Industria colombiana', desc: 'Apoyamos y trabajamos con proveedores nacionales.' },
+];
+
+const productos = [
+  { title: 'Cojines y almohadones', desc: 'Múltiples tamaños y telas para complementar cualquier espacio.' },
+  { title: 'Bases cama', desc: 'A la medida con tiras para un mejor agarre.' },
+  { title: 'Puffs', desc: 'Elaborados a la medida, con tela resistente y lavable.' },
+];
+---
+
+<Layout title="Catálogo — Tapicería Sacha" description="Catálogo de telas, cojines, puffs y bases cama de Tapicería Sacha en Medellín.">
+  <section class="py-16 md:py-24 bg-[var(--surface)]">
+    <div class="container-app">
+      <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--primary)] mb-3">Catálogo</p>
+      <h1 class="font-heading text-4xl md:text-5xl font-semibold max-w-2xl mb-5">
+        Muestras de telas y texturas de lujo
+      </h1>
+      <p class="text-[var(--muted)] max-w-xl">
+        Conoce nuestros productos y las características de nuestras telas. Escríbenos por WhatsApp para recibir el catálogo completo con precios.
+      </p>
+    </div>
+  </section>
+
+  <section class="pb-16 md:pb-20 bg-[var(--surface)]">
+    <div class="container-app">
+      <h2 class="font-heading text-2xl md:text-3xl font-semibold mb-8">Características de nuestras telas</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        {specs.map((s) => (
+          <div class="bg-[var(--bg)] border border-[var(--border)] rounded-2xl p-6">
+            <div class="w-9 h-9 rounded-full bg-[var(--secondary)] flex items-center justify-center text-[var(--primary)] mb-4">
+              <Icon name="check" class="w-4 h-4" />
+            </div>
+            <h3 class="font-semibold text-sm mb-2">{s.title}</h3>
+            <p class="text-xs text-[var(--muted)] leading-relaxed">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-20 md:pb-28 bg-[var(--surface)]">
+    <div class="container-app">
+      <h2 class="font-heading text-2xl md:text-3xl font-semibold mb-8">Confección a medida</h2>
+      <div class="grid sm:grid-cols-3 gap-6 mb-10">
+        {productos.map((p) => (
+          <div class="border border-[var(--border)] rounded-2xl p-6">
+            <h3 class="font-semibold text-sm mb-2">{p.title}</h3>
+            <p class="text-xs text-[var(--muted)] leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <a
+        href={site.whatsappWithText('Hola, me gustaría ver el catálogo completo de telas y productos.')}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 btn-primary rounded-full px-7 py-3.5 text-sm font-semibold transition-colors"
+      >
+        <Icon name="whatsapp" class="w-5 h-5" />
+        Solicitar catálogo completo
+      </a>
+    </div>
+  </section>
+</Layout>

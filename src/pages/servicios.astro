@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../lib/site';
+import { galleryImages } from '../lib/gallery';
+
+const servicios = [
+  {
+    title: 'Tapizado de muebles',
+    desc: 'Renovamos y tapizamos todo tipo de muebles con las mejores telas y materiales del mercado: sofás, sillones, sillas de comedor y más.',
+    image: galleryImages[0],
+  },
+  {
+    title: 'Restauración y pintura de madera',
+    desc: 'Restauramos, pintamos y barnizamos mobiliario de madera con acabados de primera calidad, devolviéndole la vida a tus piezas favoritas.',
+    image: galleryImages[5],
+  },
+  {
+    title: 'Servicio a domicilio',
+    desc: 'Servicio en tu hogar u oficina para reparaciones y ajustes menores sin necesidad de mover tus muebles del lugar.',
+    image: galleryImages[3],
+  },
+  {
+    title: 'Confección a medida',
+    desc: 'Confeccionamos cojines, almohadones, puffs y bases cama a la medida de tu espacio, con tiras para un mejor agarre.',
+    image: galleryImages[2],
+  },
+];
+---
+
+<Layout title="Servicios — Tapicería Sacha" description="Tapizado, restauración de madera, servicio a domicilio y confección a medida en Medellín.">
+  <section class="py-16 md:py-24 bg-[var(--surface)]">
+    <div class="container-app">
+      <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--primary)] mb-3">Servicios</p>
+      <h1 class="font-heading text-4xl md:text-5xl font-semibold max-w-2xl mb-5">
+        Descubre todo lo que podemos hacer por tu hogar
+      </h1>
+      <p class="text-[var(--muted)] max-w-xl">
+        Desde el tapizado de un sillón hasta la confección de piezas nuevas a la medida. Cada servicio incluye asesoría, elección de materiales y entrega con calidad garantizada.
+      </p>
+    </div>
+  </section>
+
+  <section class="pb-20 md:pb-28 bg-[var(--surface)]">
+    <div class="container-app grid gap-16">
+      {servicios.map((s, i) => (
+        <div class={`grid md:grid-cols-2 gap-10 items-center ${i % 2 === 1 ? 'md:[&>*:first-child]:order-2' : ''}`}>
+          <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg)]">
+            <img src={s.image.src} alt={s.image.alt} class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div>
+            <h2 class="font-heading text-2xl md:text-3xl font-semibold mb-4">{s.title}</h2>
+            <p class="text-[var(--muted)] leading-relaxed mb-6">{s.desc}</p>
+            <a
+              href={site.whatsappWithText(`Hola, me interesa el servicio de ${s.title.toLowerCase()}.`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 btn-primary rounded-full px-6 py-3 text-sm font-semibold transition-colors"
+            >
+              <Icon name="whatsapp" class="w-4 h-4" />
+              Cotizar este servicio
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

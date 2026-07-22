@@ -1,0 +1,21 @@
+---
+import ContactForm from '../ContactForm.astro';
+---
+
+<section id="contacto" class="py-20 md:py-28 bg-[var(--bg)]">
+  <div class="container-app grid md:grid-cols-2 gap-12 items-start">
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--primary)] mb-3">Hagamos realidad</p>
+      <h2 class="font-heading text-3xl md:text-4xl font-semibold mb-5 max-w-md">
+        Tu proyecto de tapicería, hecho a la medida
+      </h2>
+      <p class="text-[var(--muted)] max-w-md leading-relaxed">
+        Contratos claros, reportes fotográficos y precios sin sorpresas. Cumplimos con los tiempos acordados y mantenemos comunicación constante.
+      </p>
+    </div>
+
+    <div class="bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-7 md:p-8">
+      <ContactForm />
+    </div>
+  </div>
+</section>

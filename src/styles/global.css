@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@import '@fontsource-variable/inter/standard.css';
+@import '@fontsource-variable/playfair-display/wght.css';
+@import '@fontsource-variable/playfair-display/wght-italic.css';
+
+:root {
+  --bg: #f8f6f1;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --muted: #6b6355;
+  --border: #e7e1da;
+  --primary: #b58a4a;
+  --primary-dark: #96703a;
+  --secondary: #e7e1da;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display Variable', 'Playfair Display', Georgia, serif;
+  }
+}
+
+.container-app {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}

@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { galleryImages } from '../lib/gallery';
+---
+
+<Layout title="Nosotros — Tapicería Sacha" description="Conoce la historia, misión y visión de Tapicería Sacha, taller artesanal de tapicería en Medellín.">
+  <section class="py-16 md:py-24 bg-[var(--surface)]">
+    <div class="container-app grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--primary)] mb-3">Sobre Nosotros</p>
+        <h1 class="font-heading text-4xl md:text-5xl font-semibold mb-5">Quiénes Somos</h1>
+        <p class="text-[var(--muted)] leading-relaxed">
+          {/* TODO: reemplazar con la historia real del taller — texto de ejemplo mientras se confirma con el cliente. */}
+          Somos un taller de tapicería artesanal en Medellín con más de una década dedicada a transformar
+          y confeccionar muebles con los mejores materiales. Cada pieza que entregamos pasa por manos de
+          artesanos con años de experiencia, comprometidos con la calidad y el detalle en cada puntada.
+        </p>
+      </div>
+      <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-[var(--bg)]">
+        <img src={galleryImages[1].src} alt={galleryImages[1].alt} class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-[var(--bg)]">
+    <div class="container-app">
+      <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--primary)] mb-3">Nuestra Historia</p>
+      <h2 class="font-heading text-3xl md:text-4xl font-semibold max-w-xl mb-6">
+        Más de una década tapizando sueños
+      </h2>
+      <p class="text-[var(--muted)] max-w-2xl leading-relaxed">
+        {/* TODO: reemplazar con la historia real del taller. */}
+        Tapicería Sacha nació del oficio familiar y la pasión por el trabajo manual. Con el paso de los años
+        fuimos ampliando nuestro portafolio de servicios —tapizado, restauración de madera, confección a
+        medida y atención a domicilio— siempre con la misma promesa: la perfección en cada puntada.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-[var(--surface)]">
+    <div class="container-app grid md:grid-cols-2 gap-10">
+      <div class="bg-[var(--bg)] rounded-2xl p-8 border border-[var(--border)]">
+        <h3 class="font-heading text-2xl font-semibold mb-3">Misión</h3>
+        <p class="text-[var(--muted)] leading-relaxed">
+          {/* TODO: confirmar redacción final con el cliente. */}
+          Transformar y renovar muebles con los mejores materiales y un trabajo artesanal de alta calidad,
+          asesorando a cada cliente en cada etapa del proceso.
+        </p>
+      </div>
+      <div class="bg-[var(--bg)] rounded-2xl p-8 border border-[var(--border)]">
+        <h3 class="font-heading text-2xl font-semibold mb-3">Visión</h3>
+        <p class="text-[var(--muted)] leading-relaxed">
+          {/* TODO: confirmar redacción final con el cliente. */}
+          Ser el taller de tapicería de referencia en Medellín, reconocido por la calidad, la confianza y
+          el cuidado artesanal en cada proyecto.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

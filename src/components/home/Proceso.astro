@@ -1,0 +1,48 @@
+---
+const pasos = [
+  {
+    n: '01',
+    title: 'Asesoría',
+    desc: 'Te asesoramos en la elección del diseño según tus necesidades y espacios.',
+  },
+  {
+    n: '02',
+    title: 'Elección de materiales',
+    desc: 'Elegimos juntos la tela, el color y la textura ideal para tu proyecto.',
+  },
+  {
+    n: '03',
+    title: 'Tiempos y pago',
+    desc: 'Definimos tiempos de entrega, condiciones y métodos de pago.',
+  },
+  {
+    n: '04',
+    title: 'Fabricación',
+    desc: 'Nuestro equipo de artesanos comienza la fabricación o restauración.',
+  },
+  {
+    n: '05',
+    title: 'Entrega',
+    desc: 'Entregamos en tu domicilio u oficina con la calidad garantizada.',
+  },
+];
+---
+
+<section class="py-20 md:py-28 bg-[var(--bg)]">
+  <div class="container-app">
+    <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--primary)] mb-3">Lo que nos mueve</p>
+    <h2 class="font-heading text-3xl md:text-4xl font-semibold max-w-xl mb-12">
+      Así hacemos realidad cada proyecto
+    </h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      {pasos.map((p) => (
+        <div class="relative">
+          <p class="font-heading text-4xl font-semibold text-[var(--primary)]/30 mb-3">{p.n}</p>
+          <h3 class="font-semibold text-sm mb-2">{p.title}</h3>
+          <p class="text-sm text-[var(--muted)] leading-relaxed">{p.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

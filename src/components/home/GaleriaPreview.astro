@@ -1,0 +1,27 @@
+---
+import { galleryImages } from '../../lib/gallery';
+---
+
+<section id="galeria" class="py-20 md:py-28 bg-[var(--surface)]">
+  <div class="container-app">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-12">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--primary)] mb-3">Transformaciones</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-semibold max-w-lg">
+          Galería de muebles restaurados
+        </h2>
+      </div>
+      <a href="/galeria" class="inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary)] hover:text-[var(--primary-dark)]">
+        Ver galería completa →
+      </a>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {galleryImages.map((img) => (
+        <div class="aspect-[4/5] rounded-xl overflow-hidden bg-[var(--bg)]">
+          <img src={img.src} alt={img.alt} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

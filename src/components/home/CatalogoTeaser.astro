@@ -1,0 +1,38 @@
+---
+import Icon from '../Icon.astro';
+
+const specs = [
+  'Retardancia al fuego',
+  'Alta durabilidad',
+  'Apariencia de lino',
+  'Tendencia mundial',
+  'Industria colombiana',
+];
+---
+
+<section class="py-20 md:py-28 bg-[#1a1a1a] text-white">
+  <div class="container-app grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[#e9c98a] mb-3">Catálogo</p>
+      <h2 class="font-heading text-3xl md:text-4xl font-semibold mb-5 max-w-md">
+        Muestras de telas y texturas de lujo
+      </h2>
+      <p class="text-white/70 max-w-md mb-8 leading-relaxed">
+        Conoce nuestros productos: múltiples tamaños y telas, confeccionados a la medida con tiras para un mejor agarre, en tela resistente y lavable.
+      </p>
+      <a href="/productos" class="inline-flex items-center gap-2 btn-primary rounded-full px-7 py-3.5 text-sm font-semibold transition-colors">
+        Ver catálogo completo
+        <Icon name="arrow-right" class="w-4 h-4" />
+      </a>
+    </div>
+
+    <div class="flex flex-wrap gap-3">
+      {specs.map((s) => (
+        <span class="inline-flex items-center gap-2 border border-white/20 rounded-full px-4 py-2 text-sm text-white/85">
+          <Icon name="check" class="w-4 h-4 text-[var(--primary)]" />
+          {s}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>

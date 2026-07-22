@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../lib/site';
+---
+
+<Layout title="Contacto — Tapicería Sacha" description="Contáctanos por WhatsApp, teléfono o visítanos en Medellín. Cotización gratis sin compromiso.">
+  <section class="py-16 md:py-24 bg-[var(--surface)]">
+    <div class="container-app grid md:grid-cols-2 gap-12">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--primary)] mb-3">Hagamos realidad</p>
+        <h1 class="font-heading text-4xl md:text-5xl font-semibold mb-5">Contáctanos</h1>
+        <p class="text-[var(--muted)] max-w-md leading-relaxed mb-10">
+          Completa el formulario y te contactaremos para una asesoría personalizada sin compromiso, o escríbenos directo por WhatsApp.
+        </p>
+
+        <div class="flex flex-col gap-6">
+          <a href={`tel:${site.phoneE164}`} class="flex items-center gap-4 hover:text-[var(--primary)] transition-colors">
+            <span class="w-11 h-11 rounded-full bg-[var(--secondary)] flex items-center justify-center text-[var(--primary)] shrink-0">
+              <Icon name="phone" class="w-5 h-5" />
+            </span>
+            <span class="text-lg font-medium">{site.phoneDisplay}</span>
+          </a>
+
+          <a href={site.mapsUrl} target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 hover:text-[var(--primary)] transition-colors">
+            <span class="w-11 h-11 rounded-full bg-[var(--secondary)] flex items-center justify-center text-[var(--primary)] shrink-0">
+              <Icon name="mappin" class="w-5 h-5" />
+            </span>
+            <span class="text-lg font-medium">{site.address}</span>
+          </a>
+
+          <div class="flex items-center gap-4 pt-2">
+            <a href={site.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-11 h-11 rounded-full bg-[var(--secondary)] flex items-center justify-center text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-colors">
+              <Icon name="facebook" class="w-5 h-5" />
+            </a>
+            <a href={site.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-11 h-11 rounded-full bg-[var(--secondary)] flex items-center justify-center text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-colors">
+              <Icon name="instagram" class="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[var(--bg)] border border-[var(--border)] rounded-2xl p-7 md:p-8">
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-20">
+    <div class="container-app">
+      <div class="rounded-2xl overflow-hidden border border-[var(--border)] h-80">
+        <iframe
+          title="Ubicación Tapicería Sacha"
+          src="https://maps.google.com/maps?q=Carrera+71+44-47+Florida+Nueva+Medell%C3%ADn&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          class="w-full h-full border-0"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</Layout>

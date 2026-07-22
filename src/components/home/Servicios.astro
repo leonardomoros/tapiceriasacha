@@ -1,0 +1,47 @@
+---
+const servicios = [
+  {
+    title: 'Tapizado de muebles',
+    desc: 'Renovamos y tapizamos todo tipo de muebles con las mejores telas y materiales del mercado.',
+  },
+  {
+    title: 'Restauración y pintura',
+    desc: 'Restauramos, pintamos y barnizamos mobiliario de madera con acabados de primera calidad.',
+  },
+  {
+    title: 'Servicio a domicilio',
+    desc: 'Servicio en tu hogar u oficina para reparaciones y ajustes menores sin mover tus muebles.',
+  },
+  {
+    title: 'Confección a medida',
+    desc: 'Confeccionamos cojines, almohadones, puffs y bases cama a la medida de tu espacio.',
+  },
+];
+---
+
+<section id="servicios" class="py-20 md:py-28 bg-[var(--bg)]">
+  <div class="container-app">
+    <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--primary)] mb-3">Servicios</p>
+    <h2 class="font-heading text-3xl md:text-4xl font-semibold max-w-xl mb-4">
+      Creamos y renovamos para tu hogar
+    </h2>
+    <p class="text-[var(--muted)] max-w-lg mb-12">
+      Descubre todo lo que podemos hacer por tu hogar.
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {servicios.map((s) => (
+        <div class="bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-7 hover:shadow-lg transition-shadow">
+          <h3 class="font-heading text-lg font-semibold mb-2.5">{s.title}</h3>
+          <p class="text-sm text-[var(--muted)] leading-relaxed">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10">
+      <a href="/servicios" class="inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary)] hover:text-[var(--primary-dark)]">
+        Conoce todos los servicios →
+      </a>
+    </div>
+  </div>
+</section>

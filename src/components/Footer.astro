@@ -1,0 +1,77 @@
+---
+import { nav, site } from '../lib/site';
+import Icon from './Icon.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-[#1a1a1a] text-[#cfc9bd]">
+  <div class="container-app py-14 grid gap-10 md:grid-cols-4">
+    <div>
+      <p class="font-heading text-xl font-semibold text-white mb-3">
+        Tapicería <span class="text-[var(--primary)]">Sacha</span>
+      </p>
+      <p class="text-sm leading-relaxed text-[#a8a196]">
+        Tapicería artesanal en Medellín. Fabricación, restauración y tapizado de muebles con los mejores materiales.
+      </p>
+      <div class="flex items-center gap-4 mt-5">
+        <a href={site.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="hover:text-[var(--primary)] transition-colors">
+          <Icon name="facebook" class="w-5 h-5" />
+        </a>
+        <a href={site.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-[var(--primary)] transition-colors">
+          <Icon name="instagram" class="w-5 h-5" />
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-wider text-[#a8a196] mb-4">Navegación</p>
+      <ul class="space-y-2.5 text-sm">
+        {nav.map((item) => (
+          <li><a href={item.href} class="hover:text-white transition-colors">{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-wider text-[#a8a196] mb-4">Contacto</p>
+      <ul class="space-y-3 text-sm">
+        <li>
+          <a href={`tel:${site.phoneE164}`} class="flex items-start gap-2.5 hover:text-white transition-colors">
+            <Icon name="phone" class="w-4 h-4 mt-0.5 shrink-0" />
+            {site.phoneDisplay}
+          </a>
+        </li>
+        <li>
+          <a href={site.mapsUrl} target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 hover:text-white transition-colors">
+            <Icon name="mappin" class="w-4 h-4 mt-0.5 shrink-0" />
+            {site.address}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-wider text-[#a8a196] mb-4">Visita a domicilio</p>
+      <p class="text-sm leading-relaxed text-[#a8a196] mb-4">
+        Te asesoramos en tu casa u oficina, sin compromiso.
+      </p>
+      <a
+        href={site.whatsappWithText('Hola, me gustaría agendar una visita a domicilio.')}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 btn-primary rounded-full px-5 py-2.5 text-sm font-semibold transition-colors"
+      >
+        <Icon name="whatsapp" class="w-4 h-4" />
+        Agendar visita
+      </a>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="container-app py-5 text-xs text-[#8a8377] flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>© {year} Tapicería Sacha. Todos los derechos reservados.</p>
+      <p>Medellín, Colombia</p>
+    </div>
+  </div>
+</footer>

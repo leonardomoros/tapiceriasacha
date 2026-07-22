@@ -1,0 +1,20 @@
+---
+// TODO: confirmar cifras reales con el cliente antes de publicar.
+const stats = [
+  { value: '10+', label: 'Años de experiencia' },
+  { value: '500+', label: 'Proyectos completados' },
+  { value: '400+', label: 'Clientes satisfechos' },
+  { value: '30+', label: 'Tipos de materiales' },
+];
+---
+
+<section class="py-14 bg-[var(--secondary)]">
+  <div class="container-app grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    {stats.map((s) => (
+      <div>
+        <p class="font-heading text-3xl md:text-4xl font-semibold text-[var(--primary-dark)]">{s.value}</p>
+        <p class="text-xs md:text-sm text-[var(--muted)] mt-1 uppercase tracking-wide">{s.label}</p>
+      </div>
+    ))}
+  </div>
+</section>

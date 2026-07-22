@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { galleryImages } from '../lib/gallery';
+---
+
+<Layout title="Galería — Tapicería Sacha" description="Galería de muebles restaurados y tapizados por Tapicería Sacha en Medellín.">
+  <section class="py-16 md:py-24 bg-[var(--surface)]">
+    <div class="container-app">
+      <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--primary)] mb-3">Transformaciones</p>
+      <h1 class="font-heading text-4xl md:text-5xl font-semibold max-w-2xl mb-5">
+        Galería de muebles restaurados
+      </h1>
+      <p class="text-[var(--muted)] max-w-xl mb-12">
+        {/* TODO: reemplazar con fotografías reales de proyectos terminados. */}
+        Un vistazo a algunas de nuestras transformaciones. Muy pronto actualizaremos esta galería con fotos reales de nuestros proyectos.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {galleryImages.map((img) => (
+          <div class="aspect-square rounded-xl overflow-hidden bg-[var(--bg)]">
+            <img src={img.src} alt={img.alt} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

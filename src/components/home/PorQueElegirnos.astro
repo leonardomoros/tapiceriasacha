@@ -1,0 +1,48 @@
+---
+import Icon from '../Icon.astro';
+
+const puntos = [
+  {
+    title: 'Las mejores telas y materiales',
+    desc: 'Las mejores telas y materiales del mercado para un acabado impecable.',
+  },
+  {
+    title: 'Portafolio actualizado',
+    desc: 'Portafolio actualizado con las últimas tendencias en diseño y texturas.',
+  },
+  {
+    title: 'Artesanos con experiencia',
+    desc: 'Artesanos con años de experiencia dedicados a tu proyecto.',
+  },
+  {
+    title: 'Asesoría directa',
+    desc: 'Asesoría directa de los dueños en cada etapa del proceso.',
+  },
+];
+---
+
+<section class="py-20 md:py-28 bg-[var(--surface)]">
+  <div class="container-app grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--primary)] mb-3">Por qué elegirnos</p>
+      <h2 class="font-heading text-3xl md:text-4xl font-semibold mb-5 max-w-md">
+        La calidad se obtiene al crear con pasión, cuidado y atención a cada detalle
+      </h2>
+      <p class="text-[var(--muted)] max-w-md">
+        Seleccionamos los mejores materiales y cuidamos cada detalle del proceso, cumpliendo los tiempos acordados con comunicación constante.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6">
+      {puntos.map((p) => (
+        <div class="flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-full bg-[var(--secondary)] flex items-center justify-center text-[var(--primary)]">
+            <Icon name="check" class="w-5 h-5" />
+          </div>
+          <h3 class="font-semibold text-sm">{p.title}</h3>
+          <p class="text-sm text-[var(--muted)] leading-relaxed">{p.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

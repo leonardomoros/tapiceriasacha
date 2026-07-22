@@ -1,0 +1,71 @@
+---
+import { site } from '../lib/site';
+import Icon from './Icon.astro';
+---
+
+<form id="contact-form" class="grid gap-5">
+  <div>
+    <label for="name" class="block text-xs font-semibold uppercase tracking-wide text-[var(--muted)] mb-1.5">
+      Tu nombre completo
+    </label>
+    <input
+      id="name"
+      name="name"
+      type="text"
+      required
+      class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[var(--primary)]"
+      placeholder="Tu nombre completo"
+    />
+  </div>
+
+  <div>
+    <label for="phone" class="block text-xs font-semibold uppercase tracking-wide text-[var(--muted)] mb-1.5">
+      Teléfono / WhatsApp
+    </label>
+    <input
+      id="phone"
+      name="phone"
+      type="tel"
+      required
+      class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[var(--primary)]"
+      placeholder="+57 300 000 0000"
+    />
+  </div>
+
+  <div>
+    <label for="message" class="block text-xs font-semibold uppercase tracking-wide text-[var(--muted)] mb-1.5">
+      Cuéntanos tu proyecto
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      rows="4"
+      class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-sm focus:outline-none focus:border-[var(--primary)]"
+      placeholder="Ej: Quiero tapizar un sofá de 3 puestos..."
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="inline-flex items-center justify-center gap-2 btn-primary rounded-full px-7 py-3.5 text-sm font-semibold transition-colors"
+  >
+    <Icon name="whatsapp" class="w-5 h-5" />
+    Obtén una cotización gratis
+  </button>
+  <p class="text-xs text-[var(--muted)]">
+    Completa el formulario y te contactaremos para una asesoría personalizada sin compromiso.
+  </p>
+</form>
+
+<script define:vars={{ whatsapp: site.whatsapp }}>
+  const form = document.getElementById('contact-form');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = data.get('name');
+    const phone = data.get('phone');
+    const message = data.get('message');
+    const text = `Hola, soy ${name} (${phone}). ${message || 'Me gustaría recibir una cotización.'}`;
+    window.open(`${whatsapp}?text=${encodeURIComponent(text)}`, '_blank');
+  });
+</script>
