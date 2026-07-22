@@ -9,8 +9,10 @@
   --text: #1a1a1a;
   --muted: #6b6355;
   --border: #e7e1da;
-  --primary: #b58a4a;
-  --primary-dark: #96703a;
+  /* Darkened from the original #b58a4a mockup gold — that shade only hit ~3.1:1
+     contrast as text/button-fill against white, below the WCAG AA 4.5:1 minimum. */
+  --primary: #8b6123;
+  --primary-dark: #6e4c1b;
   --secondary: #e7e1da;
 }
 

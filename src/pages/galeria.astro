@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import { galleryImages } from '../lib/gallery';
 ---
@@ -18,7 +19,7 @@ import { galleryImages } from '../lib/gallery';
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         {galleryImages.map((img) => (
           <div class="aspect-square rounded-xl overflow-hidden bg-[var(--bg)]">
-            <img src={img.src} alt={img.alt} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+            <Image src={img.src} width={img.width} height={img.height} alt={img.alt} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
           </div>
         ))}
       </div>

@@ -11,6 +11,9 @@ export default defineConfig({
   // switch this back without fixing that redirect first).
   site: 'https://tapiceriasacha.com',
   trailingSlash: 'always',
+  image: {
+    remotePatterns: [{ protocol: 'https', hostname: 'media.base44.com' }],
+  },
   adapter: vercel(),
   integrations: [sitemap()],
   vite: {
